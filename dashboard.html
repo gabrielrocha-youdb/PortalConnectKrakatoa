@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon-16x16.png" type="image/png"> <!-- Substitua "path/to/purple_K_icon.png" pelo caminho real do seu ícone -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+
+        #sidebar {
+            background-color: #343a40;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            width: 240px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            overflow-y: auto;
+        }
+
+        #content {
+            padding: 20px;
+            position: relative;
+            margin-left: 240px;
+        }
+
+        .nav-link i {
+            margin-right: 10px;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-brand i {
+            margin-right: 5px;
+        }
+
+        .navbar-toggler {
+            color: white;
+        }
+        
+        .looker-embed {
+            width: 100%;
+            height: 600px;
+            border: 0;
+        }
+
+        .nav-link {
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 10px;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+
+        .nav-link:hover {
+            background-color: #6c757d;
+            color: white; /* Adicionado para manter o texto branco ao passar o mouse */
+        }
+
+        .nav-link:hover i {
+            color: white; /* Adicionado para manter o ícone branco ao passar o mouse */
+        }
+
+        .logout-btn {
+            border: none;
+            text-align: center;
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+            background-color: #dc3545;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            bottom: 20px;
+            font-size: 14px; /* Tamanho de fonte ajustado */
+        }
+
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+                <div class="sidebar-sticky">
+                    <h2 class="text-center text-white mb-4">Krakatoa</h2>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <i class="fas fa-home"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-chart-line"></i> Dashboard 1
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fas fa-chart-pie"></i> Dashboard 2
+                            </a>
+                        </li>
+                        <!-- Adicione mais dashboards conforme necessário -->
+                    </ul>
+                    <!-- Botão de Logout -->
+                    <button class="btn btn-danger logout-btn" onclick="logoutUser()">Sair</button>
+                </div>
+            </nav>
+
+            <!-- Conteúdo principal -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4" id="content">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Bem-vindo ao Dashboard</h1>
+                </div>
+                <!-- Conteúdo da sua página vai aqui -->
+                
+                <!-- Incorporando o painel do Looker -->
+                <iframe class="looker-embed" src="https://lookerstudio.google.com/embed/reporting/39537e94-3749-44b7-b345-40d87a1fbfdc/page/x5GbD" frameborder="0" allowfullscreen></iframe>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+        function logoutUser() {
+            // Redirecionando para a página inicial (index)
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+</html>
